@@ -8,7 +8,9 @@ function animation() {
     rotateY(${mousePos.x * 30}deg)`;
     reflectiveElemets.forEach((el) => {
         el.style.backgroundPosition = `
-        ${mousePos.x * parseFloat(el.dataset.xScale || 10) + 50 + parseFloat(el.dataset.xOffset || 0)}% ${-mousePos.y *parseFloat(el.dataset.yScale || 10) + 50 + parseFloat(el.dataset.yOffset || 0)}%, 0 0`;
+        ${mousePos.x * parseFloat(el.dataset.xScale || 10) + 50 + parseFloat(el.dataset.xOffset || 0)}% ${
+            -mousePos.y * parseFloat(el.dataset.yScale || 10) + 50 + parseFloat(el.dataset.yOffset || 0)
+        }%, 0 0`;
     });
 }
 
@@ -19,16 +21,21 @@ document.body.addEventListener("mousemove", (ev) => {
 
 animation();
 
+window.addEventListener("load", () => {
+    if (window.DeviceOrientationEvent && typeof DeviceMotionEvent.requestPermission === "function") {
+        window.DeviceMotionEvent.requestPermission();
+    }
+    if (window.DeviceOrientationEvent) {
+        window.addEventListener(
+            "deviceorientation",
+            (event) => {
+                const frontToBack = event.beta; // alpha: rotation around z-axis
+                const leftToRight = event.gamma; // gamma: left to right
+                mousePos.y = Math.max(Math.min((frontToBack - 45) / 90 - 0.5, 0), 1);
+                mousePos.x = Math.max(Math.min((leftToRight - 15) / 30 - 0.5, 0), 1);
+            },
+            true
+        );
+    }
+});
 
-if (window.DeviceOrientationEvent) {
-    window.addEventListener(
-      "deviceorientation",
-      (event) => {
-        const frontToBack  = event.beta; // alpha: rotation around z-axis
-        const leftToRight = event.gamma; // gamma: left to right
-        mousePos.y = Math.max(Math.min((frontToBack - 45) / 90 - 0.5,0),1);
-        mousePos.x = Math.max(Math.min((leftToRight - 15) / 30 - 0.5,0),1);
-      },
-      true,
-    );
-  }
