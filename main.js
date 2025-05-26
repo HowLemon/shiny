@@ -18,3 +18,18 @@ document.body.addEventListener("mousemove", (ev) => {
 });
 
 animation();
+
+
+if (window.DeviceOrientationEvent) {
+    window.addEventListener(
+      "deviceorientation",
+      (event) => {
+        const frontToBack  = event.beta; // alpha: rotation around z-axis
+        const leftToRight = event.gamma; // gamma: left to right
+        mousePos.y = Math.max(Math.min((frontToBack - 45) / 90 - 0.5,0),1);
+        mousePos.x = Math.max(Math.min((leftToRight - 15) / 30 - 0.5,0),1);
+        handleOrientationEvent(frontToBack, leftToRight, rotateDegrees);
+      },
+      true,
+    );
+  }
