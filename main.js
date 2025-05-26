@@ -22,8 +22,12 @@ document.body.addEventListener("mousemove", (ev) => {
 animation();
 
 window.addEventListener("load", () => {
+    console.log("hello")
     if (window.DeviceOrientationEvent && typeof DeviceMotionEvent.requestPermission === "function") {
+        console.log("requesting");
         window.DeviceMotionEvent.requestPermission();
+    }else{
+        console.log("no event?");
     }
     if (window.DeviceOrientationEvent) {
         window.addEventListener(
