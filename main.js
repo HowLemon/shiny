@@ -28,7 +28,6 @@ if (window.DeviceOrientationEvent) {
         const leftToRight = event.gamma; // gamma: left to right
         mousePos.y = Math.max(Math.min((frontToBack - 45) / 90 - 0.5,0),1);
         mousePos.x = Math.max(Math.min((leftToRight - 15) / 30 - 0.5,0),1);
-        handleOrientationEvent(frontToBack, leftToRight, rotateDegrees);
       },
       true,
     );
