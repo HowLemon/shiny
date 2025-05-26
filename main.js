@@ -1,7 +1,7 @@
 window.mousePos = { x: 0, y: 0 }; // percentage, relative to screen center
 const ticketElement = document.getElementById("ticket");
 const reflectiveElemets = document.querySelectorAll(".reflective");
-
+const clamp = (val, min, max) => Math.min(Math.max(val, min), max)
 function animation() {
     requestAnimationFrame(animation);
     ticketElement.style.transform = `rotateX(${mousePos.y * -30}deg)
@@ -36,11 +36,12 @@ window.addEventListener("load", async () => {
             (event) => {
                 const frontToBack = event.beta; // alpha: rotation around z-axis
                 const leftToRight = event.gamma; // gamma: left to right
-                mousePos.y = Math.max(Math.min((frontToBack - 45) / 90 - 0.5, 0), 1);
-                mousePos.x = Math.max(Math.min((leftToRight - 15) / 30 - 0.5, 0), 1);
+                mousePos.y = clamp(frontToBack/90,0,1) - 0.5;
+                mousePos.x = clamp((leftToRight+20)/40,0,1)-0.5;
             },
             true
         );
     }
 });
+
 
