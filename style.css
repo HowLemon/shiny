@@ -1,0 +1,45 @@
+html {
+  overflow: hidden;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background: #000000;
+  background-blend-mode: multiply;
+  background: linear-gradient(46deg, #000000 0%, #1a2929 50%, #24091e 100%), url(assets/bg.png);
+  animation-name: background-slide;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 30cm;
+}
+div#ticket {
+  height: 300px;
+  aspect-ratio: 2.5;
+  display: flex;
+  position: relative;
+  mask-image: url(assets/stencil.svg);
+  mask-size: 100% 100%;
+  mask-clip: border-box;
+}
+div#ticket * {
+  box-sizing: border-box;
+}
+.reflective {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+@keyframes background-slide {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
