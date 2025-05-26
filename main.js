@@ -21,14 +21,15 @@ document.body.addEventListener("mousemove", (ev) => {
 
 animation();
 
-window.addEventListener("load", () => {
+window.addEventListener("load", async () => {
     console.log("hello")
     if (window.DeviceOrientationEvent && typeof DeviceMotionEvent.requestPermission === "function") {
         console.log("requesting");
-        window.DeviceMotionEvent.requestPermission();
+        await window.DeviceMotionEvent.requestPermission();
     }else{
         console.log("no event?");
     }
+    console.log("jello")
     if (window.DeviceOrientationEvent) {
         window.addEventListener(
             "deviceorientation",
