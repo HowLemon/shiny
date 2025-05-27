@@ -56,10 +56,10 @@ window.addEventListener("load", async () => {
     console.log("hello")
     if (window.DeviceOrientationEvent) {
         if(!typeof DeviceMotionEvent.requestPermission === "function"){
+            initOrientation()
+        }else{
             requestPermissionBtn.classList.remove("hidden");
             
-        }else{
-            initOrientation()
         }
     }else{
         console.log("no event?");
