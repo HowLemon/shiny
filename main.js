@@ -22,6 +22,16 @@ document.body.addEventListener("mousemove", (ev) => {
     mousePos.y = ev.clientY / window.innerHeight - 0.5;
 });
 
+document.addEventListener("touchmove", (ev)=>{
+    // ev.preventDefault();
+    const touches = ev.changedTouches;
+    if(touches[0]){
+        const touch = touches[0];
+        mousePos.x = touch.clientX / window.innerWidth - 0.5;
+        mousePos.y = touch.clientY / window.innerHeight - 0.5;
+    }
+});
+
 animation();
 
 requestPermissionBtn.addEventListener("click",async (e)=>{
