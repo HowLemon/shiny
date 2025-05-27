@@ -1,79 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>SSR</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-        <button class="hidden" id="permission">Enable Gyroscope</button>
-        <div id="ticket">
-            <div
-                data-x-scale="10"
-                data-y-scale="-50"
-                class="reflective"
-                style="
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SSR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <button class="hidden" id="permission">Enable Gyroscope</button>
+    <div id="ticket">
+        <div class="poster" style="position: absolute;">
+            
+                <!-- <div style=" isolation: isolate; z-index: 100; position: absolute; bottom: 0; left: 0; margin: 32px;font-size: 50px;">
+                    <div data-x-scale="10" data-y-scale="-100" class="reflective" style="
+                    background: #845c00;
+background: -webkit-linear-gradient(310deg, #845c00 0%, #ffe500 50%, #fbffdf 100%);
+background: linear-gradient(310deg, #845c00 0%, #ffe500 50%, #fbffdf 100%);
+                    background-size: 500% 2000%;
+                    background-repeat: no-repeat;
+                    mix-blend-mode: screen;
+                    background-clip: text;
+                    /* opacity: 0.3; */
+                ">GNOCCHI</div>
+                </div> -->
+        </div>
+        <div
+            style="position: absolute; isolation: isolate; z-index: 100; top:0; left: 0; margin: 16px; backdrop-filter: blur(10px); ">
+            <div data-x-scale="10" data-y-scale="-100" class="reflective" style="
+                    background: #000000;
+                    background: linear-gradient(10deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 60%, rgba(255, 255, 255, 1) 100%);
+                    background-size: 500% 2000%;
+                    background-repeat: no-repeat;
+                    mix-blend-mode: screen;
+                    opacity: 0.3;
+                "></div>
+            <img style="width: 50px;border: 5px solid rgba(255, 255, 255, 0.116)" src="assets/OIP.jpg" alt="" srcset="">
+        </div>
+        <div data-x-scale="100" data-y-scale="100" class="reflective" style="
+                    background: #000000;
+                    background: url(assets/51E0C84C-B85E-4A8A-B072-24F335B05FA0.jpeg);
+                    background-size: 500% 500%;
+                    /* background-repeat: no-repeat; */
+                    mix-blend-mode: color-dodge;
+                    opacity: 0.1;
+                "></div>
+        <div data-x-scale="10" data-y-scale="-50" class="reflective" style="
                     background:linear-gradient(10deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 53%, rgba(255, 255, 255, 1) 100%), url(assets/gloss.png);
                     background-size: 300% 500%,50px 50px;
                     background-blend-mode: overlay;
                     background-repeat: repeat-x , repeat;
                     mix-blend-mode: screen;
                     opacity: 0.3;
-                "
-            ></div>
-            <div
-            data-x-scale="150"
-            data-x-offset="30"
-            data-y-scale="-270"
-            data-y-offset="80"
-                class="reflective"
-                style="
+                "></div>
+        <div data-x-scale="150" data-x-offset="30" data-y-scale="-270" data-y-offset="80" class="reflective" style="
                     background:radial-gradient(circle,rgb(51, 255, 85) 0%, rgb(88, 133, 255) 20%, rgba(0, 0, 0, 0) 30%), url(assets/gloss.png);
                      background-size: 500% 500%, 50px 50px;
                     background-blend-mode: overlay;
                     background-repeat: repeat-x , repeat;
                     mix-blend-mode: screen;
                     opacity: 0.9;
-                "
-            ></div>
-            <div
-                data-x-scale="150"
-                data-x-offset="30"
-                data-y-scale="-270"
-                data-y-offset="80"
-                class="reflective"
-                style="
+                "></div>
+        <div data-x-scale="150" data-x-offset="30" data-y-scale="-270" data-y-offset="80" class="reflective" style="
                     background: radial-gradient(circle,rgb(255, 215, 235) 3%, rgb(255, 187, 221) 5%, rgba(0, 0, 0, 0) 20%);
                     background-size: 250% 210%, 10px 25px;
                     background-blend-mode: saturation;
                     background-repeat: repeat-x , repeat;
                     mix-blend-mode: hard-light;
                     opacity: 0.2;
-                "
-            ></div>
-            <div
-                data-x-scale="10"
-                data-y-scale="-50"
-                class="reflective"
-                style="
+                "></div>
+        <div data-x-scale="10" data-y-scale="-50" class="reflective" style="
                     background: #000000;
                     background: linear-gradient(10deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 53%, rgba(255, 255, 255, 1) 100%);
                     background-size: 300% 500%;
                     background-repeat: no-repeat;
                     /* mix-blend-mode: color-burn; */
                     opacity: 0.3;
-                "
-            ></div>
-            <div
-                class="poster"
-                style="
-                    
-                "
-            >
+                "></div>
+        <div class="poster">
             <div style="
             background: url('assets/PXL_20250303_153556868.jpg');
             width: 100%;
@@ -84,14 +92,13 @@
 
             </div>
         </div>
-            <div
-                class="info"
-                style=""
-            >
-                <div>THIS IS MY CAT</div>
-                she is beautiful
-            </div>
+        <div class="info" style="">
+
+            <div>THIS IS MY CAT</div>
+            she is beautiful
         </div>
-        <script type="module" src="main.js"></script>
-    </body>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+
 </html>

@@ -8,7 +8,7 @@ const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
 function animation() {
     requestAnimationFrame(animation);
     ticketElement.style.transform = `rotateX(${mousePos.y * -30}deg)
-    rotateY(${mousePos.x * 30}deg)`;
+    rotateY(${mousePos.x * 30}deg) `;
     reflectiveElemets.forEach((el) => {
         el.style.backgroundPosition = `
         ${mousePos.x * parseFloat(el.dataset.xScale || 10) + 50 + parseFloat(el.dataset.xOffset || 0)}% ${
