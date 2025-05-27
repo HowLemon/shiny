@@ -1,7 +1,10 @@
 window.mousePos = { x: 0, y: 0 }; // percentage, relative to screen center
 const ticketElement = document.getElementById("ticket");
 const reflectiveElemets = document.querySelectorAll(".reflective");
-const clamp = (val, min, max) => Math.min(Math.max(val, min), max)
+const requestPermissionBtn = document.querySelector("button#permission");
+
+
+const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
 function animation() {
     requestAnimationFrame(animation);
     ticketElement.style.transform = `rotateX(${mousePos.y * -30}deg)
@@ -21,8 +24,8 @@ document.body.addEventListener("mousemove", (ev) => {
 
 animation();
 
-window.addEventListener("load", async () => {
-    console.log("hello")
+requestPermissionBtn.addEventListener("click",async (e)=>{
+    e.preventDefault();
     if (window.DeviceOrientationEvent && typeof DeviceMotionEvent.requestPermission === "function") {
         console.log("requesting");
         await window.DeviceMotionEvent.requestPermission();
@@ -30,6 +33,10 @@ window.addEventListener("load", async () => {
         console.log("no event?");
     }
     console.log("jello")
+    initOrientation();
+})
+
+function initOrientation(){
     if (window.DeviceOrientationEvent) {
         window.addEventListener(
             "deviceorientation",
@@ -41,6 +48,21 @@ window.addEventListener("load", async () => {
             },
             true
         );
+        requestPermissionBtn.classList.add("hidden");
+    }
+}
+
+window.addEventListener("load", async () => {
+    console.log("hello")
+    if (window.DeviceOrientationEvent) {
+        if(!typeof DeviceMotionEvent.requestPermission === "function"){
+            requestPermissionBtn.classList.remove("hidden");
+            
+        }else{
+            initOrientation()
+        }
+    }else{
+        console.log("no event?");
     }
 });
 

@@ -53,6 +53,23 @@ div.info {
   top: 0;
   left: 0;
 }
+button#permission {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 24px;
+  padding: 8px 16px;
+  margin: 16px;
+}
+.hidden {
+  display: none;
+}
+body {
+  font-family: "DynaPuff", system-ui;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
 @keyframes background-slide {
   0% {
     background-position: 0% 0%;
