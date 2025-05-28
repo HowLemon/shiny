@@ -14,7 +14,7 @@ function animation() {
         ${mousePos.x * parseFloat(el.dataset.xScale || 10) + 50 + parseFloat(el.dataset.xOffset || 0)}% ${
             -mousePos.y * parseFloat(el.dataset.yScale || 10) + 50 + parseFloat(el.dataset.yOffset || 0)
         }%, 0 0`;
-    });
+    }); 
 }
 
 document.body.addEventListener("mousemove", (ev) => {

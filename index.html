@@ -14,12 +14,12 @@
 <body>
     <button class="hidden" id="permission">Enable Gyroscope</button>
     <div id="ticket">
-        
+
         <div class="poster" style="position: absolute;">
 
             <div
                 style=" isolation: isolate; z-index: 100; position: absolute; bottom: 0; left: 0; margin: 32px;font-size: 50px;">
-                <div data-x-scale="50" data-y-scale="-100" class="reflective" style="
+                <div data-x-scale="50" data-y-scale="-100" class="reflective title-text" style="
                     position: relative;
                     background: url(assets/city.jpg), linear-gradient(310deg, #845c00 0%, #ffe500 50%, #ffbb00 100%);
                     /* background: #845c00; */
@@ -31,9 +31,10 @@ background: linear-gradient(310deg, #845c00 0%, #ffe500 50%, #fbffdf 100%); */
                     background-blend-mode: multiply;
                     background-clip: text;
                     color: transparent;
-                    font-size: 30px;
+                    /* font-size: 100%; */
                     /* opacity: 0.3; */
-                ">GNOCCHI IS VERY CUTE</div>
+                    text-shadow: 0px 0px 10px rgba(104, 104, 104, 0.233);
+                ">GNOCCHI❤️</div>
             </div>
         </div>
         <div
@@ -53,7 +54,7 @@ background: linear-gradient(310deg, #845c00 0%, #ffe500 50%, #fbffdf 100%); */
                     background: url(assets/51E0C84C-B85E-4A8A-B072-24F335B05FA0.jpeg);
                     background-size: 500% 500%;
                     /* background-repeat: no-repeat; */
-                    mix-blend-mode: color-dodge;
+                    mix-blend-mode: lighten;
                     opacity: 0.1;
                 "></div>
         <div data-x-scale="10" data-y-scale="-50" class="reflective" style="
@@ -101,7 +102,7 @@ background: linear-gradient(310deg, #845c00 0%, #ffe500 50%, #fbffdf 100%); */
         background: url(assets/city.jpg);
         background-size: 500% 500%;
         background-repeat: no-repeat;
-        mix-blend-mode: color-burn;
+        mix-blend-mode: overlay;
         opacity: 0.05;
     "></div>
         <div data-x-scale="10" data-y-scale="-50" class="reflective" style="
@@ -123,11 +124,20 @@ background: linear-gradient(310deg, #845c00 0%, #ffe500 50%, #fbffdf 100%); */
 
             </div>
         </div>
-        <div class="info" style="">
-
-            <div>THIS IS MY CAT</div>
-            she is beautiful
+        <div class="info" style="position: relative">
+            <div style="width: 100%;height: 100%; display: flex; flex-direction: column;  justify-content: space-between;">
+                <div>
+                    <div>THIS IS MY CAT</div>
+                    <div></div>she is beautiful
+                </div>
+                <div style="display: inline-block; font-family: monospace; font-size: 0.5rem;">
+                    Made with pure JS/CSS by How Lemon.
+                    She puked everywhere in the living room the night I made this thing. Bravo Gnocchi.
+                </div>
+            </div>
         </div>
+
+    </div>
     </div>
     <script type="module" src="main.js"></script>
 </body>
