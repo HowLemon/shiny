@@ -14,20 +14,27 @@
 <body>
     <button class="hidden" id="permission">Enable Gyroscope</button>
     <div id="ticket">
+        
         <div class="poster" style="position: absolute;">
 
-            <!-- <div style=" isolation: isolate; z-index: 100; position: absolute; bottom: 0; left: 0; margin: 32px;font-size: 50px;">
-                    <div data-x-scale="10" data-y-scale="-100" class="reflective" style="
-                    background: #845c00;
-background: -webkit-linear-gradient(310deg, #845c00 0%, #ffe500 50%, #fbffdf 100%);
-background: linear-gradient(310deg, #845c00 0%, #ffe500 50%, #fbffdf 100%);
-                    background-size: 500% 2000%;
+            <div
+                style=" isolation: isolate; z-index: 100; position: absolute; bottom: 0; left: 0; margin: 32px;font-size: 50px;">
+                <div data-x-scale="50" data-y-scale="-100" class="reflective" style="
+                    position: relative;
+                    background: url(assets/city.jpg), linear-gradient(310deg, #845c00 0%, #ffe500 50%, #ffbb00 100%);
+                    /* background: #845c00; */
+/* background: -webkit-linear-gradient(310deg, #845c00 0%, #ffe500 50%, #fbffdf 100%);
+background: linear-gradient(310deg, #845c00 0%, #ffe500 50%, #fbffdf 100%); */
+                    background-size: 500% 500%;
                     background-repeat: no-repeat;
-                    mix-blend-mode: screen;
+                    /* mix-blend-mode: screen; */
+                    background-blend-mode: multiply;
                     background-clip: text;
+                    color: transparent;
+                    font-size: 30px;
                     /* opacity: 0.3; */
-                ">GNOCCHI</div>
-                </div> -->
+                ">GNOCCHI IS VERY CUTE</div>
+            </div>
         </div>
         <div
             style="position: absolute; isolation: isolate; z-index: 100; top:0; left: 0; margin: 16px; backdrop-filter: blur(10px); ">
@@ -57,7 +64,7 @@ background: linear-gradient(310deg, #845c00 0%, #ffe500 50%, #fbffdf 100%);
                     mix-blend-mode: screen;
                     opacity: 0.3;
                 "></div>
-        <div data-x-scale="150" data-x-offset="60" data-y-scale="-270" data-y-offset="-40" class="reflective" style="
+        <div data-x-scale="150" data-x-offset="60" data-y-scale="-270" data-y-offset="-10" class="reflective" style="
                 background:radial-gradient(circle,rgb(82, 51, 255) 0%, rgba(0, 0, 0, 0) 30%), url(assets/gloss.png);
                  background-size: 500% 500%, 50px 50px;
                 background-blend-mode: overlay;
@@ -65,7 +72,7 @@ background: linear-gradient(310deg, #845c00 0%, #ffe500 50%, #fbffdf 100%);
                 mix-blend-mode: screen;
                 opacity: 0.4;
             "></div>
-        <div data-x-scale="150" data-x-offset="-30" data-y-scale="-270" data-y-offset="-50" class="reflective" style="
+        <div data-x-scale="150" data-x-offset="-10" data-y-scale="-270" data-y-offset="-20" class="reflective" style="
                 background:radial-gradient(circle,rgb(255, 51, 51) 0%, rgba(0, 0, 0, 0) 30%), url(assets/gloss.png);
                  background-size: 500% 500%, 50px 50px;
                 background-blend-mode: overlay;
@@ -73,7 +80,7 @@ background: linear-gradient(310deg, #845c00 0%, #ffe500 50%, #fbffdf 100%);
                 mix-blend-mode: screen;
                 opacity: 0.4;
             "></div>
-        <div data-x-scale="150" data-x-offset="30" data-y-scale="-270" data-y-offset="80" class="reflective" style="
+        <div data-x-scale="150" data-x-offset="10" data-y-scale="-270" data-y-offset="80" class="reflective" style="
                     background:radial-gradient(circle,rgb(51, 255, 85) 0%, rgb(88, 133, 255) 20%, rgba(0, 0, 0, 0) 30%), url(assets/gloss.png);
                      background-size: 500% 500%, 50px 50px;
                     background-blend-mode: overlay;
@@ -89,6 +96,14 @@ background: linear-gradient(310deg, #845c00 0%, #ffe500 50%, #fbffdf 100%);
                     mix-blend-mode: hard-light;
                     opacity: 0.2;
                 "></div>
+        <div data-x-scale="50" data-y-scale="-100" class="reflective" style="
+        background: #000000;
+        background: url(assets/city.jpg);
+        background-size: 500% 500%;
+        background-repeat: no-repeat;
+        mix-blend-mode: color-burn;
+        opacity: 0.05;
+    "></div>
         <div data-x-scale="10" data-y-scale="-50" class="reflective" style="
                     background: #000000;
                     background: linear-gradient(10deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 53%, rgba(255, 255, 255, 1) 100%);
